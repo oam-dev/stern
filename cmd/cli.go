@@ -67,7 +67,7 @@ var opts = &Options{
 	output:         "default",
 }
 
-func Run() {
+func Run() *cobra.Command{
 	cmd := &cobra.Command{}
 	cmd.Use = "stern pod-query"
 	cmd.Short = "Tail multiple pods and containers from Kubernetes"
@@ -139,9 +139,7 @@ func Run() {
 		return nil
 	}
 
-	if err := cmd.Execute(); err != nil {
-		log.Fatal(err)
-	}
+	return cmd
 }
 
 func parseConfig(args []string) (*stern.Config, error) {

@@ -14,8 +14,14 @@
 
 package main
 
-import "github.com/wercker/stern/cmd"
+import (
+	"github.com/wercker/stern/cmd"
+	"log"
+)
 
 func main() {
-	cmd.Run()
+	cmd := cmd.Run()
+	if err := cmd.Execute(); err != nil {
+		log.Fatal(err)
+	}
 }

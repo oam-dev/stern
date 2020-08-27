@@ -121,7 +121,7 @@ func Run() {
 		if (narg > 1) || (narg == 0 && opts.selector == "") {
 			return cmd.Help()
 		}
-		config, err := parseConfig(args)
+		config, err := ParseConfig(args)
 		if err != nil {
 			log.Println(err)
 			os.Exit(2)
@@ -144,7 +144,7 @@ func Run() {
 	}
 }
 
-func parseConfig(args []string) (*stern.Config, error) {
+func ParseConfig(args []string) (*stern.Config, error) {
 	kubeConfig, err := getKubeConfig()
 	if err != nil {
 		return nil, err

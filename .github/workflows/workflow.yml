@@ -4,16 +4,16 @@ on:
   pull_request: {}
   push:
     branches:
-    - master
+    - "master"
     tags:
     - "*"
 
 jobs:
   go_unit_tests:
     name: Go unit tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     container:
-      image: golang:1.16
+      image: golang:1.23
     steps:
     - name: Checkout code
       uses: actions/checkout@v1

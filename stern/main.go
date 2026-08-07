@@ -58,7 +58,7 @@ func Run(ctx context.Context, config *Config) error {
 		for {
 			select {
 			case str := <-logC:
-				fmt.Fprintf(os.Stdout, str)
+				fmt.Fprint(os.Stdout, str)
 			case <-ctx.Done():
 				break
 			}

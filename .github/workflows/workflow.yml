@@ -13,7 +13,7 @@ jobs:
     name: Go unit tests
     runs-on: ubuntu-22.04
     container:
-      image: golang:1.25.12
+      image: golang:1.27.1
     steps:
     - name: Checkout code
       uses: actions/checkout@v1
